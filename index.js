@@ -1,20 +1,19 @@
 module.exports = function (broccoli) {
   var jsStringEscape = require('js-string-escape')
 
-  TemplatePreprocessor.prototype = Object.create(broccoli.Preprocessor.prototype)
-  TemplatePreprocessor.prototype.constructor = TemplatePreprocessor
-  function TemplatePreprocessor (options) {
+  TemplateFilter.prototype = Object.create(broccoli.Filter.prototype)
+  TemplateFilter.prototype.constructor = TemplateFilter
+  function TemplateFilter (options) {
     this.extensions = options.extensions
     this.compileFunction = options.compileFunction || ''
   }
 
-  TemplatePreprocessor.prototype.targetExtension = 'js'
+  TemplateFilter.prototype.targetExtension = 'js'
 
-  TemplatePreprocessor.prototype.processString = function (string, info, callback) {
-    callback(null,
-      'export default ' + this.compileFunction +
-      '("' + jsStringEscape(string) + '");\n')
+  TemplateFilter.prototype.processString = function (string) {
+    return 'export default ' + this.compileFunction +
+      '("' + jsStringEscape(string) + '");\n'
   }
 
-  return TemplatePreprocessor
+  return TemplateFilter
 }
