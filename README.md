@@ -7,11 +7,11 @@ that no precompilation happens.
 ## Usage Example
 
 ```js
-var TemplateFilter = require('broccoli-template')(broccoli);
-tree.addTransformer(new TemplateFilter({
+var filterTemplates = require('broccoli-template')(broccoli);
+tree = filterTemplates(tree, {
   extensions: ['hbs', 'handlebars'],
   compileFunction: 'Ember.Handlebars.compile'
-}));
+});
 ```
 
 Given a file `template.hbs`
@@ -20,20 +20,17 @@ Given a file `template.hbs`
 {{foo}}
 ```
 
-this `TemplateFilter` instance will emit a file `template.js`:
+this function will emit a file `template.js`:
 
 ```js
 export default Ember.Handlebars.compile("{{foo}}");
 ```
 
-Note that if you need to support different template formats, you will
-typically create a separate `TemplateFilter` instance for each format.
-
 ### Options
 
 #### extensions (required)
 
-A list of file extensions that this `TemplateFilter` instance applies to.
+A list of file extensions that this template filter applies to.
 
 #### compileFunction
 

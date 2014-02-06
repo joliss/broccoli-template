@@ -3,7 +3,8 @@ module.exports = function (broccoli) {
 
   TemplateFilter.prototype = Object.create(broccoli.Filter.prototype)
   TemplateFilter.prototype.constructor = TemplateFilter
-  function TemplateFilter (options) {
+  function TemplateFilter (inputTree, options) {
+    this.inputTree = inputTree
     this.extensions = options.extensions
     this.compileFunction = options.compileFunction || ''
   }
@@ -15,5 +16,7 @@ module.exports = function (broccoli) {
       '("' + jsStringEscape(string) + '");\n'
   }
 
-  return TemplateFilter
+  return function (inputTree, options) {
+    return new TemplateFilter(inputTree, options)
+  }
 }
