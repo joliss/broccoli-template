@@ -7,7 +7,7 @@ that no precompilation happens.
 ## Usage Example
 
 ```js
-var filterTemplates = require('broccoli-template')(broccoli);
+var filterTemplates = require('broccoli-template');
 tree = filterTemplates(tree, {
   extensions: ['hbs', 'handlebars'],
   compileFunction: 'Ember.Handlebars.compile'

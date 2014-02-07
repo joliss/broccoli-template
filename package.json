@@ -10,6 +10,7 @@
     "url": "https://github.com/joliss/broccoli-template"
   },
   "dependencies": {
-    "js-string-escape": "~1.0.0"
+    "js-string-escape": "~1.0.0",
+    "broccoli": "0.0.10"
   }
 }
