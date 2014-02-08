@@ -4,6 +4,12 @@ A generic filter for Broccoli that turns template files into ES6
 JavaScript modules. It wraps templates in a function call of your choice. Note
 that no precompilation happens.
 
+## Installation
+
+```bash
+npm install --save broccoli-template
+```
+
 ## Usage Example
 
 ```js
