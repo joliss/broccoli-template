@@ -1,8 +1,8 @@
 var jsStringEscape = require('js-string-escape')
-var broccoli = require('broccoli')
+var Filter = require('broccoli-filter')
 
 module.exports = TemplateFilter
-TemplateFilter.prototype = Object.create(broccoli.Filter.prototype)
+TemplateFilter.prototype = Object.create(Filter.prototype)
 TemplateFilter.prototype.constructor = TemplateFilter
 function TemplateFilter (inputTree, options) {
   if (!(this instanceof TemplateFilter)) return new TemplateFilter(inputTree, options)
