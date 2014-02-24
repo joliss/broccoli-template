@@ -9,6 +9,11 @@
     "type": "git",
     "url": "https://github.com/joliss/broccoli-template"
   },
+  "keywords": [
+    "broccoli-plugin",
+    "template",
+    "javascript"
+  ],
   "dependencies": {
     "js-string-escape": "~1.0.0",
     "broccoli-filter": "~0.0.1"
