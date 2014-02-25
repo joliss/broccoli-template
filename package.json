@@ -15,7 +15,7 @@
     "javascript"
   ],
   "dependencies": {
-    "js-string-escape": "~1.0.0",
-    "broccoli-filter": "~0.0.1"
+    "js-string-escape": "^1.0.0",
+    "broccoli-filter": "^0.1.0"
   }
 }
