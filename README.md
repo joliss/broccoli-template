@@ -7,7 +7,7 @@ that no precompilation happens.
 ## Installation
 
 ```bash
-npm install --save broccoli-template
+npm install --save-dev broccoli-template
 ```
 
 ## Usage Example
