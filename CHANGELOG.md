@@ -1,5 +1,7 @@
 # master
 
+# 0.1.1
+
 * Update filter dependency to avoid hardlink issue
 
 # 0.1.0
