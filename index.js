@@ -14,6 +14,11 @@ function TemplateFilter (inputTree, options) {
 TemplateFilter.prototype.targetExtension = 'js'
 
 TemplateFilter.prototype.processString = function (string) {
-  return 'export default ' + this.compileFunction +
-    '("' + jsStringEscape(string) + '");\n'
+  string = '"' + jsStringEscape(string) + '"'
+
+  if (this.compileFunction) {
+    string = this.compileFunction + '(' + string + ')'
+  }
+
+  return 'export default ' + string + ';\n'
 }
